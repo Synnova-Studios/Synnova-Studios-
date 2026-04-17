@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,6 +35,27 @@ nav a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
+  cursor: pointer;
+}
+
+nav a.active {
+  color: white;
+  border-bottom: 2px solid white;
+}
+
+/* TABS */
+.tab {
+  display: none;
+}
+
+.tab.active {
+  display: block;
+  animation: fade 0.3s ease-in-out;
+}
+
+@keyframes fade {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 /* HERO */
@@ -100,7 +122,7 @@ button {
   justify-content: center;
 }
 
-/* CONTACT */
+/* FOOTER */
 footer {
   background-color: #e9e1dc;
   padding: 30px;
@@ -116,19 +138,23 @@ footer {
 <header>SYNNOVA DIGITAL STUDIO</header>
 
 <nav>
-  <a href="#">Home</a>
-  <a href="#services">Services</a>
-  <a href="#portfolio">Portfolio</a>
-  <a href="#contact">Contact</a>
+  <a onclick="showTab('home', event)">Home</a>
+  <a onclick="showTab('services', event)">Services</a>
+  <a onclick="showTab('portfolio', event)">Portfolio</a>
+  <a onclick="showTab('contact', event)">Contact</a>
 </nav>
 
-<section class="hero">
-  <h1>We Build Your Online Presence</h1>
-  <p>Websites & social media that attract real clients </p>
-  <button>Get Started</button>
+<!-- HOME -->
+<section id="home" class="tab">
+  <div class="hero">
+    <h1>We Build Your Online Presence</h1>
+    <p>Websites & social media that attract real clients</p>
+    <button>Get Started</button>
+  </div>
 </section>
 
-<section id="services" class="section">
+<!-- SERVICES -->
+<section id="services" class="tab section">
   <h2>Our Services</h2>
 
   <div class="services">
@@ -149,7 +175,8 @@ footer {
   </div>
 </section>
 
-<section id="portfolio" class="section">
+<!-- PORTFOLIO -->
+<section id="portfolio" class="tab section">
   <h2>Our Work</h2>
 
   <div class="portfolio">
@@ -159,7 +186,8 @@ footer {
   </div>
 </section>
 
-<section id="contact" class="section">
+<!-- CONTACT -->
+<section id="contact" class="tab section">
   <h2>Contact Us</h2>
   <p>Instagram: @the_bloom_digitalstudio</p>
   <p>Email: thebloomdigitalstudioo@gmail.com</p>
@@ -170,5 +198,24 @@ footer {
   <p>© 2026 Synnova Digital Studio</p>
 </footer>
 
+<script>
+function showTab(tabId, event) {
+  const tabs = document.querySelectorAll('.tab');
+  const links = document.querySelectorAll('nav a');
+
+  tabs.forEach(tab => tab.classList.remove('active'));
+  links.forEach(link => link.classList.remove('active'));
+
+  document.getElementById(tabId).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// Default tab
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('nav a')[0].click();
+});
+</script>
+
 </body>
 </html>
+```
