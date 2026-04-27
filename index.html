@@ -203,7 +203,7 @@ button:hover {
   gap: 20px;
 }
 
-.portfolio div {
+.portfolio-item {
   width: 250px;
   height: 150px;
   background-color: #ddd;
@@ -211,6 +211,17 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.portfolio-item:hover {
+  background-color: #b8c59e;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 /* FOOTER */
@@ -246,7 +257,7 @@ footer {
     <h2>Our Approach</h2>
 
     <p>
-      We work closely with you to create a website that truly represents your business clean, modern, and tailored to your vision. Our goal is to make your company stand out online with a professional look that builds trust and attracts customers.
+      We work closely with you to create a website that truly represents your business clean, modern, and tailored to your vision. Our goal is to make your company stand out online with a professional[...]
     </p>
 
     <p>
@@ -254,7 +265,7 @@ footer {
     </p>
 
     <p>
-      From design to launch, we handle the details layout, structure, and overall user experience so your website not only looks great but is easy to navigate and effective at turning visitors into customers.
+      From design to launch, we handle the details layout, structure, and overall user experience so your website not only looks great but is easy to navigate and effective at turning visitors into cu[...]
     </p>
 
     <p>
@@ -278,7 +289,7 @@ footer {
   
       <h3>Custom Website Design</h3>
       <p>
-        We create modern, responsive websites tailored to your brand and business goals. Our focus is on clean design, smooth navigation, and a professional look that builds trust and turns visitors into customers.
+        We create modern, responsive websites tailored to your brand and business goals. Our focus is on clean design, smooth navigation, and a professional look that builds trust and turns visitors i[...]
       </p>
       <ul>
         <li>Mobile-friendly design</li>
@@ -319,7 +330,7 @@ footer {
   <div class="why-section">
     <h3>Why This Matters</h3>
     <p>
-      Your online presence is often the first impression people have of your business. A clean, well-designed website and consistent branding can make the difference between gaining a customer or losing one. We focus on creating an experience that builds trust and encourages people to choose your business.
+      Your online presence is often the first impression people have of your business. A clean, well-designed website and consistent branding can make the difference between gaining a customer or losi[...]
     </p>
   </div>
 
@@ -332,9 +343,9 @@ footer {
   <h2>Our Work</h2>
 
   <div class="portfolio">
-    <div>Project 1</div>
-    <div>Project 2</div>
-    <div>Project 3</div>
+    <a href="https://synnova-studios.github.io/Villages-Contruction/" target="_blank" class="portfolio-item">Villages Construction</a>
+    <div class="portfolio-item">Project 2</div>
+    <div class="portfolio-item">Project 3</div>
   </div>
 </section>
 
@@ -372,8 +383,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
-</script>
-
-</body>
-</html>
-```
